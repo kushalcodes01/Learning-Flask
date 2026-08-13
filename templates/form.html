@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Form</title>
+    </head>
+    <body>
+        {% include 'navbar.html' %}
+        
+        <h1>Enter your name</h1>
+
+        <form method="POST">
+
+            <input type="text" name="student_id" placeholder="Enter ID">
+            <input
+                type="text"
+                name="username"
+                placeholder="Enter Name">
+
+            <input type="number" name="semester" placeholder="Enter Semester">
+            
+
+            <button type="submit">Submit</button>
+        </form>
+    </body>
+</html>
