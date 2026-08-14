@@ -72,16 +72,12 @@ This project helped me learn:
 
 ### Home Page
 
-![Home](screenshots/home.png)
+![Home](Screenshots/home.png)
 
 ### Add Student
 
-![Add Student](screenshots/add-student.png)
+![Add Student](Screenshots/add-student.png)
 
 ### View Students
 
-![View Students](screenshots/view-students.png)
-
-### Search Student
-
-![Search Student](screenshots/search-student.png)
+![View Students](Screenshots/view-students.png)
