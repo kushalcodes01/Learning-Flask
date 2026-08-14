@@ -76,8 +76,8 @@ This project helped me learn:
 
 ### Add Student
 
-![Add Student](Screenshots/add-student.png)
+![Add Student](Screenshots/add_student.png)
 
 ### View Students
 
-![View Students](Screenshots/view-students.png)
+![View Students](Screenshots/view_students.png)
