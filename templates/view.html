@@ -7,13 +7,17 @@
         {% include 'navbar.html' %}
         
         <h1>All Students</h1>
+        <h3>Total Students: {{ count }}</h3>
         <table border="1">
 
         <tr>
             <th>Student ID</th>
             <th>Name</th>
             <th>Semester</th>
+            <th>Update</th>
+            <th>Delete</th>
         </tr>
+        {% if students %}
 
         {% for student in students %}
 
@@ -21,9 +25,27 @@
             <td>{{ student[0] }}</td>
             <td>{{ student[1] }}</td>
             <td>{{ student[2] }}</td>
+            <td>
+                <a href="/update/{{ student[0] }}">
+                    Update
+                </a>
+            </td>
+
+            <td>
+                <a href="/delete/{{ student[0] }}">
+                    Delete
+                </a>
+            </td>
         </tr>
 
         {% endfor %}
+        {% else %}
+        <tr>
+            <td colspan="5">
+                No Student Found
+            </td>
+        </tr>
+        {% endif %}
 
         </table>
     

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Search Results</title>
+    </head>
+    <body>
+        
+        {% include 'navbar.html' %}
+
+        {% if student %}
+
+        <h1>Search Result</h1>
+
+        <table border="1">
+            <tr>
+                <th>Student ID</th>
+                <th>Name</th>
+                <th>Semester</th>
+            </tr>
+            <td>{{ student[0] }}</td>
+            <td>{{ student[1] }}</td>
+            <td>{{ student[2] }}</td>
+            </tr>
+
+        </table>
+        {% else %}
+        <h2>Student Not Found</h2>
+
+        {% endif %}
+    </body>
+</html>

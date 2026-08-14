@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect, url_for
 
 from database import(
     create_table,
@@ -53,14 +53,17 @@ def view_students():
 
     students = get_all_students()
 
+    count = len(students)
+
     return render_template("view.html",
-                           students=students)
+                           students=students,
+                           count=count)
 
 @app.route("/delete/<student_id>")
 def delete(student_id):
 
     delete_student(student_id)
-    return "Student deleted"
+    return redirect(url_for("view_students"))
 
 @app.route("/update", methods = ["GET", "POST"])
 def update():
@@ -79,6 +82,26 @@ def update():
         return "student Updated"
     return render_template("update.html")
 
+@app.route("/update/<student_id>", methods=["GET", "POST"])
+def edit_student(student_id):
+
+    if request.method == "POST":
+
+        name = request.form["name"]
+        semester = request.form["semester"]
+
+        update_student(
+            student_id,
+            name,
+            semester
+        )
+        return redirect(url_for("view_students"))
+
+    student = search_student(student_id)
+
+    return render_template("edit_student.html",
+                           student=student)
+
 @app.route("/search", methods=["GET", "POST"])
 def search():
 
@@ -88,7 +111,7 @@ def search():
 
         student = search_student(student_id)
 
-        return str(student)
+        return render_template("search_result.html", student=student)
 
     return render_template("search.html")
 

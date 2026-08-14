@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Edit Student</title>
+    </head>
+    <body>
+        
+        {% include 'navbar.html' %}
+
+        <h1>Edit Student</h1>
+
+        <form method="POST">
+
+            Student ID:
+            <input 
+            type="text"
+            value="{{ student[0] }}"
+            readonly>
+            <br><br>
+
+            Name:
+            <input
+            type="text"
+            name="name"
+            value="{{ student[1] }}">
+            <br><br>
+
+            Semester:
+            <input 
+            type="number"
+            name="semester"
+            value="{{ student[2] }}">
+            <br><br>
+
+            <button type="submit">
+                Save changes
+            </button>
+
+
+        </form>
+    </body>
+</html>
